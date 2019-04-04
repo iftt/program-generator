@@ -19,7 +19,7 @@ app.get('/weather/getNextRoot', function (req, res) {
   res.status(200).send({ nextRoot: mamState.channel.next_root });
 });
 
-app.listen(3001, () => {
+const server = app.listen(3001, () => {
   console.log('Listening at Port 3001');
 });
 
@@ -31,7 +31,7 @@ const interval = setInterval(() => {
   counter++;
   if (counter > 3)
     counter = 0;
-}, 20000);
+}, 15000);
 
 async function _publish(trytes) {
   try {
@@ -43,8 +43,8 @@ async function _publish(trytes) {
   } catch(err) {}
 }
 
-exports.defaul = {
-  app,
+module.exports = {
+  server,
   interval
 }
 
