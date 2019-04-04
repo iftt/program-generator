@@ -1,7 +1,7 @@
-# program-generator [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/IFTT/program-generator.svg)](https://greenkeeper.io/)
+# program-generator [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/iftt/program-generator.svg)](https://greenkeeper.io/)
 
-[travis-image]: https://travis-ci.org/IFTT/program-generator.svg?branch=master
-[travis-url]: https://travis-ci.org/IFTT/program-generator
+[travis-image]: https://travis-ci.org/iftt/program-generator.svg?branch=master
+[travis-url]: https://travis-ci.org/iftt/program-generator
 [npm-image]: https://img.shields.io/npm/v/@iftt/program-generator.svg
 [npm-url]: https://npmjs.org/package/@iftt/program-generator
 [downloads-image]: https://img.shields.io/npm/dm/@iftt/program-generator.svg
