@@ -1,7 +1,7 @@
 {
-  "name": "@iftt/skeleton-module",
+  "name": "@iftt/program-generator",
   "version": "1.0.0",
-  "description": "When creating new NodeJS modules, use this skeletal structure",
+  "description": "Use the program generator to quickly and autonomously listen to specific changes in new services from server input.",
   "main": "lib/index.js",
   "scripts": {
     "lint+build+test": "yarn run lint && yarn run build && yarn run test",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iftt/skeleton-module.git"
+    "url": "https://github.com/iftt/program-generator.git"
   },
   "author": "Craig OConnor",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/IFTT/skeleton-module/issues"
+    "url": "https://github.com/IFTT/program-generator/issues"
   },
-  "homepage": "https://github.com/IFTT/skeleton-module#readme",
+  "homepage": "https://github.com/IFTT/program-generator#readme",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
@@ -29,6 +29,13 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^4.0.0",
     "flow-bin": "^0.48.0",
+    "mock-http-server": "^1.2.0",
     "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "@iftt/mam": "^0.6.2",
+    "@iftt/tryte-buffer": "^1.1.2",
+    "axios": "^0.18.0",
+    "json-logic-js": "^1.2.2"
   }
 }
