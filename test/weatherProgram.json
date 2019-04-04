@@ -109,7 +109,7 @@
         "precision": 2
       }
     },
-    "getRoot": "http://192.168.0.46:3001/weather/getNextRoot"
+    "getRoot": "http://localhost:3001/weather/getNextRoot"
   },
   "program": {
     "condition": {
@@ -118,6 +118,6 @@
         {"!=": [{"var":"current.eventrainin"}, 0]}
       ]
     },
-    "action": { "key": "garageDoor", "value": 1 },
+    "action": { "key": "garageDoor", "value": 1 }
   }
 }

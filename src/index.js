@@ -50,7 +50,7 @@ class ProgramGenerator extends EventEmitter {
         self.createSubscription(nextRoot);
       })
       .catch(err => {
-        console.log('err', err);
+        console.log('could not get root.. trying again in 10 seconds');
         setTimeout(() => {
           self.getCurrentRoot();
         }, 10000); // try every 10 seconds
@@ -61,9 +61,7 @@ class ProgramGenerator extends EventEmitter {
     const self = this;
     return new Promise((res, rej) => {
       axios
-        .post(self.service.getRoot, {
-          apiToken: process.env.API_TOKEN
-        })
+        .get(self.service.getRoot)
         .then((response) => {
           res(response.data.nextRoot);
         })
