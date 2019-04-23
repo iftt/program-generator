@@ -753,17 +753,17 @@
     "@iota/curl" "^1.0.0-beta.11"
     babel-polyfill "^6.26.0"
 
-"@iftt/tryte-buffer@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@iftt/tryte-buffer/-/tryte-buffer-1.2.0.tgz#7a297af107421c990c95a0ea49e8ada743ab199e"
-  integrity sha512-9nMJsCIKw2r+lF425y1Z7I+Cx4VAbJLkJBLZj3CI9F0as615NmIbEXHpp2eeEn4cGt5xmOsiZBkuVqhfUdIMDQ==
+"@iftt/tryte-buffer@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@iftt/tryte-buffer/-/tryte-buffer-1.3.0.tgz#d24db647e4b4327bed9f4321d0cd2582454ab2ef"
+  integrity sha512-lhVDxQo/MBEDYqdYq+FenGhHdhY5eYxxfbaAQ5FLE4cjbioOMo/rtaDa/gA4HJ0hiQNIx1pcFH/Kbmnkkciefw==
   dependencies:
-    "@iftt/tryte-encode-decode" "^1.6.0"
+    "@iftt/tryte-encode-decode" "^1.7.0"
 
-"@iftt/tryte-encode-decode@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@iftt/tryte-encode-decode/-/tryte-encode-decode-1.6.0.tgz#f8d2b60b6ae851073c48469542739987a81b4b90"
-  integrity sha512-WaUXbWX9sJX++RswfwDZfESGzqmE2KviiytBdsbD6So/awmi/eoGYVZ5h/azgoSYRiZtnhGguwmN7IU8PCx9XQ==
+"@iftt/tryte-encode-decode@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@iftt/tryte-encode-decode/-/tryte-encode-decode-1.7.0.tgz#996992e2ba89da8cc964d0b98470f13e5abd2156"
+  integrity sha512-XZikWiITc4N+5qDU47Gpy//ZvmlQJV+WDlhvzkM9giNv+Rj+juArKz5DIuMEHh7Px+AvG+VzGXaB5HSGVVYfDg==
   dependencies:
     "@iota/area-codes" "^0.1.0"
 

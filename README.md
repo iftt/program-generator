@@ -7,6 +7,12 @@
 [downloads-image]: https://img.shields.io/npm/dm/@iftt/program-generator.svg
 [downloads-url]: https://www.npmjs.com/package/@iftt/program-generator
 
+## Debug
+If you need to debug this module use the string `program-generator`
+```sh
+DEBUG=program-generator node x
+```
+
 ## About
 
 

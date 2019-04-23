@@ -5,6 +5,8 @@ import * as Mam from '@iftt/mam' // https://devnet.thetangle.org/mam/
 import jsonLogic from 'json-logic-js' // https://github.com/jwadhams/json-logic-js
 import axios from 'axios'
 
+const debug = require('debug')('program-generator')
+
 export type Service = {
   protocol: { string: { string: any } },
   getRoot: string
@@ -30,6 +32,7 @@ class ProgramGenerator extends EventEmitter {
   interval: Function
   constructor (instructions: Instructions, intervalTime?: number = 5000) {
     super()
+    debug('creating ProgramGenerator')
     this.service = instructions.service
     this.program = instructions.program
     this.intervalTime = intervalTime
@@ -40,10 +43,12 @@ class ProgramGenerator extends EventEmitter {
   }
 
   deconstruct () {
+    debug('deconstruct')
     clearInterval(this.interval)
   }
 
   getCurrentRoot () {
+    debug('getCurrentRoot')
     const self = this
     self.getRoot()
       .then(nextRoot => {
@@ -58,6 +63,7 @@ class ProgramGenerator extends EventEmitter {
   }
 
   getRoot (): Promise<string> {
+    debug('getRoot')
     const self = this
     return new Promise((resolve, reject) => {
       axios
@@ -72,6 +78,7 @@ class ProgramGenerator extends EventEmitter {
   }
 
   createSubscription (root: string) {
+    debug('createSubscription - %s', root)
     const self = this
     self.interval = setInterval(async () => {
       let message = await Mam.fetch(root, 'public', null)
@@ -85,6 +92,7 @@ class ProgramGenerator extends EventEmitter {
   }
 
   onData (data: { string: { string: any } }) {
+    debug('onData')
     const { condition, action } = this.program // snag the program values
     // move the 'current' data backwards and make current the new true current value
     this.previous = this.current
