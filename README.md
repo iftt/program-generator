@@ -1,11 +1,11 @@
-# program-generator [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/iftt/program-generator.svg)](https://greenkeeper.io/)
+# program-generator [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 [travis-image]: https://travis-ci.org/iftt/program-generator.svg?branch=master
 [travis-url]: https://travis-ci.org/iftt/program-generator
 [npm-image]: https://img.shields.io/npm/v/@iftt/program-generator.svg
 [npm-url]: https://npmjs.org/package/@iftt/program-generator
 [downloads-image]: https://img.shields.io/npm/dm/@iftt/program-generator.svg
-[downloads-url]: https://npmjs.org/package/@iftt/program-generator
+[downloads-url]: https://www.npmjs.com/package/@iftt/program-generator
 
 ## About
 
@@ -18,7 +18,6 @@
 Copyright 2019 <IFTT>
 Copyright (c) 2004-2010 by Internet Systems Consortium, Inc. ("ISC")
 Copyright (c) 1995-2003 by Internet Software Consortium
-
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
