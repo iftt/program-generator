@@ -1,6 +1,6 @@
 {
   "name": "@iftt/program-generator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Use the program generator to quickly and autonomously listen to specific changes in new services from server input.",
   "main": "lib/index.js",
   "scripts": {
