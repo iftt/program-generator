@@ -38,28 +38,13 @@ class ProgramGenerator extends EventEmitter {
     this.intervalTime = intervalTime
     // setup proper tryte-buffer from protocol
     this.serviceProtocol = new TryteBuffer(this.service.protocol)
-    // use getRoot and then set an interval to "onData" any res
-    this.getCurrentRoot()
+    // use getRoot and then set an interval to "_onData" any res
+    this._getCurrentRoot()
   }
 
   deconstruct () {
     debug('deconstruct')
     clearInterval(this.interval)
-  }
-
-  getCurrentRoot () {
-    debug('getCurrentRoot')
-    const self = this
-    self.getRoot()
-      .then(nextRoot => {
-        self.createSubscription(nextRoot)
-      })
-      .catch((err: Error) => {
-        console.log('could not get root.. trying again in 10 seconds', err)
-        setTimeout(() => {
-          self.getCurrentRoot()
-        }, 10000) // try every 10 seconds
-      })
   }
 
   getRoot (): Promise<string> {
@@ -77,7 +62,22 @@ class ProgramGenerator extends EventEmitter {
     })
   }
 
-  createSubscription (root: string) {
+  _getCurrentRoot () {
+    debug('_getCurrentRoot')
+    const self = this
+    self.getRoot()
+      .then(nextRoot => {
+        self._createSubscription(nextRoot)
+      })
+      .catch((err: Error) => {
+        console.log('could not get root.. trying again in 10 seconds', err)
+        setTimeout(() => {
+          self._getCurrentRoot()
+        }, 10000) // try every 10 seconds
+      })
+  }
+
+  _createSubscription (root: string) {
     debug('createSubscription - %s', root)
     const self = this
     self.interval = setInterval(async () => {
@@ -86,13 +86,13 @@ class ProgramGenerator extends EventEmitter {
         root = message.nextRoot
         const payload = message.messages[0].payload
         // decode and 'handle'
-        self.onData(self.serviceProtocol.decode(payload))
+        self._onData(self.serviceProtocol.decode(payload))
       }
     }, self.intervalTime)
   }
 
-  onData (data: { string: { string: any } }) {
-    debug('onData')
+  _onData (data: { string: { string: any } }) {
+    debug('_onData')
     const { condition, action } = this.program // snag the program values
     // move the 'current' data backwards and make current the new true current value
     this.previous = this.current

@@ -7,15 +7,82 @@
 [downloads-image]: https://img.shields.io/npm/dm/@iftt/program-generator.svg
 [downloads-url]: https://www.npmjs.com/package/@iftt/program-generator
 
+## About
+The program generator module takes a specified instruction set and handles managing all new MaM data coming into the stream. If a new message triggers the the "program", it posts an `action`.
+
+## Install
+```sh
+# npm
+npm install --save @iftt/program-generator
+
+# yarn
+yarn add @iftt/program-generator
+```
+
+## How to Use
+**NOTE**: This module assumes the MaM module `@iftt/mam` has already been instantiated with a provider and ready to request/post messages from/to said provider.
+
+```js
+// ES6
+import ProgramGenerator from '@iftt/program-generator'
+// ES5
+const ProgramGenerator = require('@iftt/program-generator').default
+
+// grab the instruction set:
+const weatherProgram = require('./test/weatherProgram.json')
+
+const programGenerator = new ProgramGenerator(weatherProgram) // using the default 5 second delay
+
+programGenerator.on('action', action => {
+  // do stuff
+})
+```
+
+
 ## Debug
 If you need to debug this module use the string `program-generator`
 ```sh
 DEBUG=program-generator node x
 ```
 
-## About
+## API
 
+### Type Service
+```js
+type Service = {
+  protocol: { string: { string: any } },
+  getRoot: string
+}
+```
 
+### Type Program
+```js
+type Program = {
+  condition: Object,
+  action: { key: string, value: any }
+}
+```
+
+### Type Instructions
+```js
+type Instructions = {
+  service: Service,
+  program: Program
+}
+```
+
+### new ProgramGenerator (instructions: Instructions, intervalTime?: number = 5000): ProgramGenerator extends EventEmitter
+* instructions: Instructions `instruction set to create the program`
+* [intervalTime]: number `defaults to 5,000 milliseconds (5 seconds); timeout until checking if the latest MaM message update`
+
+### deconstruct (): void
+* null: void `used to remove any active intervals looking for new messages`
+
+### getRoot (): string
+* null: string `returns the current root of the MaM`
+
+### Event: 'action'
+* triggered when a instruction specified action has changed
 
 ---
 
